@@ -1,60 +1,33 @@
 import React from 'react';
-import {Text, Image, ScrollView, TextInput } from 'react-native';
-
-const dog = {
-  uri: 'https://raw.githubusercontent.com/AbdunabiRamadan/CIS340/master/images/dog2.png',
-  width: 64,
-  height: 64
-};
+import {Text, View, SectionList} from 'react-native';
 
 
-export default MyScrollViewApp = () =>(
 
-  
 
-      <ScrollView style={{padding: 40}}>
-        <Text style={{fontSize: 80}}> Try to scroll down </Text>
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <Text style={{fontSize: 80}}> Try to scroll down again  </Text>
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <Text style={{fontSize: 80}}> Try to scroll down again  </Text>
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <Text style={{fontSize: 80}}> Try to scroll down again  </Text>
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <Text style={{fontSize: 80}}> Try to scroll down again  </Text>
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
-        <image source = {dog} />
+export default StatesApp = () =>{
 
-      </ScrollView>
+  return (
+    <View style = {{lex: 1, paddingTop: 22}}>
+    <SectionList
+      sections={[{title: 'A', data: ['Alabama', 'Alaska', 'Arkansas', 'Arizona']},
+      {title: 'C', data: ['California', 'Colorado', 'Connecticut']},
+      {title: 'D', data: ['Deleware']},
+      {title: 'F', data: ['Florida']},
+      {title: 'G', data: ['Georgia']},
+      {title: 'H', data: ['Hawaii']},
 
-  )
 
+      ]}
+      renderItem={({item}) => <Text stydle={{padding: 10, fontSize: 20, height: 44 }}> {item} </Text> }
+      renderSectionHeader={({section}) => <Text style ={{paddingTop: 4, paddingLeft: 10,
+      paddingRight: 10,
+    paddingBottom: 4,
+      fontSize: 14,
+      fontWeight: 'bold',
+      backgroundColor: '#988DF',}}>{section.title}</Text>}
+      keyExtractor={(item,index) => index}
+    
+    />
+    </View>
+      );
+    }
